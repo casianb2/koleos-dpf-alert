@@ -14,7 +14,7 @@
 
 # Making the dongle:
 - If you want to buy the dongle, send me an e-mail casianb3@gmail.com and maybe we can work something out.
-- If you want to build your own dongle, I've provided the electrical schematic (look into the 'schematic' folder). You must flash the "koleos_DPF_alert.bin" to the ESP32.
+- If you want to build your own dongle, I've provided the electrical schematic (look into the 'schematic' folder). ~~You must flash the "koleos_DPF_alert.bin" to the ESP32.~~ "koleos_DPF_alert.bin" will be released when the app will get released on google store.
 
 # Guide how to flash binary file to the ESP32: 
 1. Follow this guide https://docs.espressif.com/projects/esp-test-tools/en/latest/esp32/production_stage/tools/flash_download_tool.html
@@ -24,6 +24,8 @@
 
 # Apps for the dongle:
 - Since the esp32 has bluetooth capabilities, I've also developed "DPF Notifier for Koleos" app and "Koleos DPF Spotify Bridge" app for the dongle. (TODO add more info, pictures, yt video links, etc)
+
+# WARNING! "DPF Notifier for Koleos" is under review by google. When the app passes google's review, it will be available on google store. After this, the "Koleos DPF Spotify Bridge" app will get reviewed and become available.
 
 1. "DPF Notifier for Koleos" app:
 - It connects to the dongle using BLE. 
