@@ -45,9 +45,9 @@
 - On my car's tablet, I only use "DPF Notifier for Koleos" with 4WD plot enabled.
 - The tablet in my car turns off when I turn the car off. So after starting the car, the tablet starts and to start the "DPF Notifier for Koleos" I use macrodroid app. You can use any app that is capable of autostarting apps after boot.
 
-#Videos and pictures:
-Older UI, shows DPF data and AWD action: https://youtu.be/y_2lQ7kFGw4
-Shows driving in mud and traction data: https://youtu.be/f923vc5_HsE
+# Videos and pictures:
+- Older UI, shows DPF data and AWD action: https://youtu.be/y_2lQ7kFGw4
+- Shows driving in mud and traction data: https://youtu.be/f923vc5_HsE
 
 ## ⚠️ Licensing and Usage
 
