@@ -1,6 +1,7 @@
 **koleos_DPF_alert.bin** is a proprietary ESP32 binary application designed for Renault Koleos GEN1 (2007 - 2016) 2.0L dCi 4WD variant. It reads DPF data and notifies the owner when a DPF regeneration begins and ends. This repository is for distribution purposes only.
 
 # WARNING! "DPF Notifier for Koleos" and "Koleos DPF Spotify Bridge" apps are useless without the DONGLE!
+# WARNING! "Koleos DPF Spotify Bridge" app is able to read notifications and route them to the "DPF Notifier for Koleos" running on the car's android tabled. The notification are not encrypted before sending them over BLE, so it is possible for anyone to intercept these notifications. So if you have sensitive information in the notifications, disable the pushing of notifications from inside the "Koleos DPF Spotify Bridge" app.
 # DISCLAIMER! I shall not be held accountable for any damage to your goods (car, android device or dongle). Do not use the dongle or the apps if you do not agree to this term. There is a possibility that you could damage your goods if you are not experienced with electronics.
 
 # What is the DONGLE and what does it do?
@@ -29,14 +30,15 @@
 - It connects to the dongle using BLE. 
 - It receives data about DPF regeneration start and end from the dongle, and shows this information on the screen.
 - This app runs in background, so you will receive notifications even if the phone/tablet is locked or the app is closed.
-- To completely close the app, use the 'Exit App' button inside the notification or the 'Exit App' button inside the app. If you don't use these buttons, the app will continue to run in the background (you will know if the app is running in background by looking at your notifications. If the app's notification is present it means the app is running)
+- To completely close the app, use the 'Exit App' button inside the notification or the 'Exit App' button inside the app. If you don't use these buttons, the app will continue to run in the background.
 - The app also provides the 4WD Solenoid Current in a graph, so you can see the 4WD System behavior in whatever driving conditions.
 - The app logs and stores the DPF regeneration events in memory, so you can review when they happened.
 - If your device allows it, you can use "DPF Notifier for Koleos" app in split screen.
 
 2. "Koleos DPF Spotify Bridge" app:
 - It connects to the dongle using BLE.
-- It pulls song information from Spotify and routes it to the dongle, then the dongle routes it to the "DPF Notifier for Koleos" app. This allows the following scenario: "Koleos DPF Spotify Bridge" app runs on your phone that plays music, and "DPF Notifier for Koleos" app runs on the car's android tablet.
+- It pulls song information from Spotify or YoutubeMusic and routes it to the dongle, then the dongle routes it to the "DPF Notifier for Koleos" app. This allows the following scenario: "Koleos DPF Spotify Bridge" app runs on your phone that plays music, and "DPF Notifier for Koleos" app runs on the car's android tablet. The song info will show up on the car's android tablet.
+- Additionally, "Koleos DPF Spotify Bridge" app can read notifications received on the phone and route them to "DPF Notifier for Koleos" app that runs on the car's android tablet. WARNING! the notification are not encrypted before sending them over BLE, so it is possible for anyone to intercept these notifications. So if you have sensitive information in the notifications, disable the pushing of notifications from inside the "Koleos DPF Spotify Bridge" app.
 - The app also runs in background and can only be closed by using the "Kill App" button inside the app.
 
 * I personally use this scenario:
