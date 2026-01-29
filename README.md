@@ -1,7 +1,7 @@
 **koleos_DPF_alert.bin** is a proprietary ESP32 binary application designed for Renault Koleos GEN1 (2007 - 2016) 2.0L dCi 4WD variant. It reads DPF data and notifies the owner when a DPF regeneration begins and ends. This repository is for distribution purposes only.
 
 # WARNING! "DPF Notifier for Koleos" and "Koleos DPF Spotify Bridge" apps are useless without the DONGLE!
-# WARNING! "Koleos DPF Spotify Bridge" app is able to read notifications and route them to the "DPF Notifier for Koleos" running on the car's android tabled. The notification are not encrypted before sending them over BLE, so it is possible for anyone to intercept these notifications. So if you have sensitive information in the notifications, disable the pushing of notifications from inside the "Koleos DPF Spotify Bridge" app.
+# WARNING! "Koleos DPF Spotify Bridge" app is able to read notifications and route them to the "DPF Notifier for Koleos" running on the car's android tablet. The notifications are not encrypted before sending them over BLE, so it is possible for anyone to intercept these notifications. So if you have sensitive information in the notifications, disable the pushing of notifications from inside the "Koleos DPF Spotify Bridge" app.
 # DISCLAIMER! I shall not be held accountable for any damage to your goods (car, android device or dongle). Do not use the dongle or the apps if you do not agree to this term. There is a possibility that you could damage your goods if you are not experienced with electronics.
 
 # What is the DONGLE and what does it do?
