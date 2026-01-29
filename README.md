@@ -11,7 +11,7 @@
     - Six(6) short beeps(0.1 seconds beep followed by 0.1 seconds pause) means a DPF regeneration started.
     - Three(3) long beeps (0.5 seconds beep followed by 0.5 seconds pause) means the DPF regeneration ended.
 4. Additionally, you can get the "DPF Notifier for Koleos" app from Google Play which will push notifications on your android phone/tablet. More info about this app, below.
-5. If you use Spotify to play songs in your Koleos, you can get the "Koleos DPF Spotify Bridge" app which will show the currently playing spotify song on the "DPF Notifier for Koleos" app screen. More info about this app, below.
+5. If you use Spotify or YoutubeMusic to play songs in your Koleos, you can get the "Koleos DPF Spotify Bridge" app which will show the currently playing spotify song on the "DPF Notifier for Koleos" app screen and is also able to read and push notifications to "DPF Notifier for Koleos" app. More info about this app, below.
 
 # Making the dongle:
 - If you want to buy the dongle, send me an e-mail casianb3@gmail.com and maybe we can work something out.
@@ -39,13 +39,13 @@
 - It connects to the dongle using BLE.
 - It pulls song information from Spotify or YoutubeMusic and routes it to the dongle, then the dongle routes it to the "DPF Notifier for Koleos" app. This allows the following scenario: "Koleos DPF Spotify Bridge" app runs on your phone that plays music, and "DPF Notifier for Koleos" app runs on the car's android tablet. The song info will show up on the car's android tablet.
 - Additionally, "Koleos DPF Spotify Bridge" app can read notifications received on the phone and route them to "DPF Notifier for Koleos" app that runs on the car's android tablet. WARNING! the notification are not encrypted before sending them over BLE, so it is possible for anyone to intercept these notifications. So if you have sensitive information in the notifications, disable the pushing of notifications from inside the "Koleos DPF Spotify Bridge" app.
-- The app also runs in background and can only be closed by using the "Kill App" button inside the app.
+- This app also runs in background and can only be closed by using the "Kill App" button inside the app.
 
 * I personally use this scenario:
 - On my phone (that has internet and spotify), I use both apps ("DPF Notifier for Koleos" and "Koleos DPF Spotify Bridge"). "DPF Notifier for Koleos" is used without the 4WD graph because it saves BLE bandwidth. 
-- I use "DPF Notifier for Koleos" on my phone too to get notifications on my phone too, not just on my car's tablet.
+- I use "DPF Notifier for Koleos" on my phone too to get DPF events information and notification on my phone too, not just on my car's tablet.
 - On my car's tablet, I only use "DPF Notifier for Koleos" with 4WD plot enabled.
-- The tablet in my car turns off when I turn the car off. So after starting the car, the tablet starts and to start the "DPF Notifier for Koleos" I use macrodroid app. You can use any app that is capable of autostarting apps after boot.
+- After starting the car, the tablet starts too and to start the "DPF Notifier for Koleos" I use macrodroid app. You can use any app that is capable of autostarting apps after boot.
 
 # Videos and pictures:
 - Older UI, shows DPF data and AWD action: https://youtu.be/y_2lQ7kFGw4
