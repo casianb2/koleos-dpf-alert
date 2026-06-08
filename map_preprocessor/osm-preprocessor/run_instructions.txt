@@ -1,0 +1,18 @@
+legal_default_speeds.json is already generated and present in this repo, but if you want to regenerate it, see https://github.com/westnordost/osm-legal-default-speeds/tree/master/parser
+To get .pbf maps files, google search: "download Romania .pbf" and enter Geofabrik website and download whatever map you want. There are more sources, if you download a .pbf file it will work.
+
+Prerequisites: gradle-9.5.1 and jdk-17.0.12 (these versions are tested, it may work with newer versions too).
+
+Commands to generate the .osm files that the app can read:
+.\gradlew clean jar	-cleans the project
+java -jar build/libs/OSMPreprocessor.jar RO ../raw_maps/romania-260531.osm.pbf assets/legal_default_speeds.json ../output_osm_preprocessor/romania	-processes the .pbf file and outputs .osm files
+
+-"RO" is the country prefix. It helps with organizing the files. You can set it to whatever you want, the app does not care.
+
+You can also use -maxspeed argument to generate ony speed cameras that cause you to get fined. Not using -maxspeed argument still generates these cameras but additionally generates all other cameras.
+java -jar build/libs/OSMPreprocessor.jar -maxspeed RO ../raw_maps/romania-260531.osm.pbf assets/legal_default_speeds.json ../output_osm_preprocessor/romania
+
+
+Then place the generated maps (the .osm files) inside phone storage: /storage/emulated/0/Android/media/com.koleos.songextractorspotify/KoleosMaps
+Restart the app and it should now report the current road legal speed limit, speed cameras, toll cameras, red-light cameras, etc.
+
