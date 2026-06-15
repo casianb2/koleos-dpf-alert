@@ -9,7 +9,7 @@ java -jar build/libs/OSMPreprocessor.jar RO ../raw_maps/romania-260531.osm.pbf a
 
 -"RO" is the country prefix. It helps with organizing the files. You can set it to whatever you want, the app does not care.
 
-You can also use -maxspeed argument to generate ony speed cameras that cause you to get fined. Not using -maxspeed argument still generates these cameras but additionally generates all other cameras.
+You can also use -maxspeed argument to generate only speed cameras that cause you to get fined. Not using -maxspeed argument still generates these cameras but additionally generates all other cameras. Note that some cameras may not be present in the maps or are categorized wrong. This depends on the OSM user entries, not this app.
 java -jar build/libs/OSMPreprocessor.jar -maxspeed RO ../raw_maps/romania-260531.osm.pbf assets/legal_default_speeds.json ../output_osm_preprocessor/romania
 
 

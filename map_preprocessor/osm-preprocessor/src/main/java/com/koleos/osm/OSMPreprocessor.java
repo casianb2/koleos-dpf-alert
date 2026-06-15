@@ -336,6 +336,14 @@ public class OSMPreprocessor {
             return -1;
         }
 
+        Integer tableOverride = DefaultSpeedTable.lookup(
+                country,
+                highway,
+                isUrban(way)
+        );
+
+        if (tableOverride != null) return tableOverride;
+
         if (highway.equals("service")) {
             String service = way.tags.get("service");
 
@@ -360,6 +368,16 @@ public class OSMPreprocessor {
         if (inferred == null) return -1;
 
         return inferred;
+    }
+
+    private boolean isUrban(OsmWay way) {
+        String highway = way.tags.get("highway");
+        if ("residential".equals(highway) || "living_street".equals(highway)) return true;
+
+        String lit = way.tags.get("lit");
+        if ("yes".equalsIgnoreCase(lit)) return true;
+
+        return way.tags.containsKey("sidewalk") || way.tags.containsKey("parking:lane:both");
     }
 
     private GridIndex assignToGrid() {
@@ -509,15 +527,17 @@ public class OSMPreprocessor {
                     }
 
                     if (w.computedMaxspeedForwardKmh != null) {
-                        pw.printf(
-                                "  <tag k=\"maxspeed:computedForward\" v=\"%d\" />%n",
+                        writeComputedMaxspeedTag(
+                                pw,
+                                "maxspeed:computedForward",
                                 w.computedMaxspeedForwardKmh
                         );
                     }
 
                     if (w.computedMaxspeedBackwardsKmh != null) {
-                        pw.printf(
-                                "  <tag k=\"maxspeed:computedBackwards\" v=\"%d\" />%n",
+                        writeComputedMaxspeedTag(
+                                pw,
+                                "maxspeed:computedBackwards",
                                 w.computedMaxspeedBackwardsKmh
                         );
                     }
@@ -540,6 +560,11 @@ public class OSMPreprocessor {
         }
 
         System.out.println("\nTile generation complete.");
+    }
+
+    private void writeComputedMaxspeedTag(PrintWriter pw, String key, Integer speedKmh) {
+        String value = speedKmh < 0 ? "undefined" : String.valueOf(speedKmh);
+        pw.printf("  <tag k=\"%s\" v=\"%s\" />%n", escape(key), escape(value));
     }
 
     private String joinLongs(Collection<Long> values) {
