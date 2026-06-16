@@ -1,12 +1,34 @@
 package com.koleos.osm;
 
-import crosby.binary.osmosis.OsmosisReader;
-import org.openstreetmap.osmosis.core.container.v0_6.*;
-import org.openstreetmap.osmosis.core.domain.v0_6.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Set;
+
+import org.openstreetmap.osmosis.core.container.v0_6.EntityContainer;
+import org.openstreetmap.osmosis.core.container.v0_6.NodeContainer;
+import org.openstreetmap.osmosis.core.container.v0_6.RelationContainer;
+import org.openstreetmap.osmosis.core.container.v0_6.WayContainer;
+import org.openstreetmap.osmosis.core.domain.v0_6.EntityType;
+import org.openstreetmap.osmosis.core.domain.v0_6.Node;
+import org.openstreetmap.osmosis.core.domain.v0_6.Relation;
+import org.openstreetmap.osmosis.core.domain.v0_6.RelationMember;
+import org.openstreetmap.osmosis.core.domain.v0_6.Tag;
+import org.openstreetmap.osmosis.core.domain.v0_6.Way;
+import org.openstreetmap.osmosis.core.domain.v0_6.WayNode;
 import org.openstreetmap.osmosis.core.task.v0_6.Sink;
 
-import java.io.*;
-import java.util.*;
+import crosby.binary.osmosis.OsmosisReader;
 
 public class OSMPreprocessor {
     private static final double CELL_SIZE = 0.5;
@@ -552,11 +574,13 @@ public class OSMPreprocessor {
             int bars = (int) (pct / 2);
 
             String bar = "[" +
-                    "█".repeat(Math.max(0, bars)) +
-                    "░".repeat(Math.max(0, 50 - bars)) +
+                    "#".repeat(Math.max(0, bars)) +
+                    "-".repeat(Math.max(0, 50 - bars)) +
                     "]";
 
-            System.out.printf("\rWriting tiles %s %.1f%% (%d / %d)", bar, pct, index, total);
+            System.out.print("\rWriting tiles " + bar + " " +
+                    String.format(Locale.US, "%.1f%% (%d / %d)", pct, index, total));
+            System.out.flush();
         }
 
         System.out.println("\nTile generation complete.");
